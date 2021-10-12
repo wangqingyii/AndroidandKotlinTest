@@ -1,4 +1,4 @@
-package com.wangqingyi.javatest.basicAnnotation;
+package com.wangqingyi.javatest.annotation.basicAnnotation;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.wangqingyi.javatest.metaAnnotation;
+package com.wangqingyi.javatest.annotation.metaAnnotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
