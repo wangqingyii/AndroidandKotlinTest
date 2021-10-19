@@ -15,7 +15,8 @@ class RetrofitActivity : BaseActivity<ActivityRetrofitBinding>() {
     override fun ActivityRetrofitBinding.initView() {
         vButton.setOnClickListener {
             initRetrofit()
-            Log.d("qweqwe", "initView: ")
+            // 使用封装的构建器进行请求
+            ServiceCreator.create<RetrofitService>()
         }
     }
 
