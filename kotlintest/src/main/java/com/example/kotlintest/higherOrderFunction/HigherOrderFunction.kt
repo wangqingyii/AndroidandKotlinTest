@@ -1,7 +1,9 @@
-package com.example.kotlintest
+package com.example.kotlintest.higherOrderFunction
 
 /**
  * 高阶函数与方法成员引用练习
+ * *表现：接收一个或多个过程为参数；或者以一个过程作为返回结果
+ * 也可以理解为以其他函数(方法)作为参数或返回值的函数
  *
  * @author WangQingYi
  * @since  2021/2/1
@@ -39,7 +41,9 @@ package com.example.kotlintest
  * Shaw偏好欧洲国家，于是设计了一个程序来获取欧洲所有的国家
  */
 
-
+/**
+ * 筛选国家用的数据类
+ */
 data class Country(
     val name: String,  // 国家名称
     val continent: String,  // 洲
@@ -49,6 +53,9 @@ data class Country(
 val res = mutableListOf<Country>()
 
 class CountryApp {
+    /**
+     * 过滤国家
+     */
     fun filterCountries1(countries: List<Country>): List<Country> {
         for (c in countries) {
             if (c.continent == "EU") // EU代表欧洲
