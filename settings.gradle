@@ -2,3 +2,5 @@ include ':kotlintest'
 include ':app'
 rootProject.name = "Android and KotlinTest"
 include ':javatest'
+include ':EventBus'
+include ':Handler'
