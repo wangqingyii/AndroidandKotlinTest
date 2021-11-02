@@ -1,4 +1,4 @@
-package com.wangqingyi.javatest.Reflection;
+package com.wangqingyi.javatest.reflection;
 
 class SonClass {
 

@@ -1,5 +1,6 @@
 package com.wangqingyi.animation
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import com.wangqingyi.animation.base.BaseActivity
@@ -14,7 +15,12 @@ import com.wangqingyi.animation.databinding.ActivityMainBinding
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun ActivityMainBinding.initView() {
+        // 属性动画
         initPropertyAnimation()
+        // AnimatorSet
+        initAnimatorSet()
+        // ViewPropertyAnimator
+        initViewPropertyAnimator()
     }
 
     /**
@@ -59,4 +65,65 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             objectAnimation.start()
         }
     }
+
+    /**
+     * AnimatorSet
+     * 如果想要一个动画结束后播放另一个动画，或者同时播放，可以通过AnimatorSet来编排
+     */
+    private fun initAnimatorSet() {
+        val aAnimator = ObjectAnimator.ofInt(1)
+        val bAnimator = ObjectAnimator.ofInt(1)
+        val cAnimator = ObjectAnimator.ofInt(1)
+        val dAnimator = ObjectAnimator.ofInt(1)
+        AnimatorSet().apply {
+            // a在b之前播放
+            play(aAnimator).before(bAnimator)
+            // b和c同时播放动画效果
+            play(bAnimator).with(cAnimator)
+            // d在c播放结束之后播放
+            play(dAnimator).after(cAnimator)
+            // 1秒后播放a动画
+            play(aAnimator).after(1000)
+            // 顺序播放
+            playSequentially(aAnimator, bAnimator, cAnimator, dAnimator)
+            // 同时播放
+            playTogether(aAnimator, bAnimator, cAnimator, dAnimator)
+            start()
+        }
+    }
+
+    /**
+     * ViewPropertyAnimator
+     * 针对View对象的特定属性同时播放动画，我们也可以采用ViewPropertyAnimator
+     */
+    private fun initViewPropertyAnimator() {
+        // translationX属性
+        mBinding.vTranslationXTv.setOnClickListener {
+            // 添加动画
+            val animator = mBinding.vTranslationXTv.animate()
+            animator.duration = 1000
+            // 点击一次会向右偏移，再点击没效果
+            animator.translationX(100f)
+            animator.start()
+        }
+        // translationXBy属性
+        mBinding.vTranslationXByTv.setOnClickListener {
+            val animator = mBinding.vTranslationXByTv.animate()
+            animator.duration = 1000
+            // 每次点击都会向右偏移
+            animator.translationXBy(100f)
+            animator.start()
+        }
+    }
+
+    /**
+     * ValueAnimator与ObjectAnimator
+     * ValueAnimator作为ObjectAnimator的父类，主要动态计算目标对象属性的值，然后设置给对象属性，达到动画效果，
+     * 而ObjectAnimator则在ValueAnimator的基础上极大地简化对目标对象的属性值的计算和添加效果，融合了 ValueAnimator
+     * 的计时引擎和值计算以及为目标对象的命名属性添加动画效果这一功能。
+     */
+private fun initValueAnimatorAndObjectAnimator(){
+
+}
+
 }

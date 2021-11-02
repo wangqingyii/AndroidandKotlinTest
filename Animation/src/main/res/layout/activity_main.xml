@@ -44,8 +44,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/common_white_bg_10"
         android:text="透明度动画"
-        android:textSize="15sp"
         android:textColor="#f4ea2a"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mLayout" />
@@ -57,8 +57,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/common_white_bg_10"
         android:text="缩放动画"
-        android:textSize="15sp"
         android:textColor="#f4ea2a"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vTransparencyBtn" />
@@ -71,12 +71,50 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/common_white_bg_10"
         android:text="旋转动画"
-        android:textSize="15sp"
         android:textColor="#f4ea2a"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vZoomBtn" />
 
+    <TextView
+        android:id="@+id/vViewPropertyAnimatorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="ViewPropertyAnimator"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vWhirlingBtn" />
 
+    <TextView
+        android:id="@+id/vTranslationXTv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_oval_f9f8ff"
+        android:gravity="center"
+        android:text="translationX"
+        android:textColor="#f4ea2a"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vViewPropertyAnimatorTv" />
+
+    <TextView
+        android:id="@+id/vTranslationXByTv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_oval_f9f8ff"
+        android:gravity="center"
+        android:text="translationXBy"
+        android:textColor="#f4ea2a"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTranslationXTv" />
+<TextView
+    android:layout_width="70dp"
+    android:layout_height="50dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
