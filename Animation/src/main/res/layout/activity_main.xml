@@ -113,8 +113,17 @@
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vTranslationXTv" />
-<TextView
-    android:layout_width="70dp"
-    android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/vTextView"
+        android:layout_width="70dp"
+        android:text="演示"
+        android:gravity="center"
+        android:textColor="#f4ea2a"
+        android:textSize="10sp"
+        android:background="@drawable/common_oval_f9f8ff"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTranslationXByTv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
